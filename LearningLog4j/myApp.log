@@ -1,0 +1,12 @@
+2018-01-31 10:03:30,433 ERROR Main [main] Error event 
+2018-01-31 10:03:30,438 FATAL AnotherClass [main] Fatal event 
+2018-01-31 10:03:30,438 INFO AnotherClass [main] Info event 
+2018-01-31 10:03:43,862 ERROR Main [main] Error event 
+2018-01-31 10:03:43,867 FATAL AnotherClass [main] Fatal event 
+2018-01-31 10:03:43,867 INFO AnotherClass [main] Info event 
+2018-01-31 10:09:25,013 ERROR Main [main] Error event 
+2018-01-31 10:09:25,018 INFO Main [main] info event 
+2018-01-31 10:09:25,018 FATAL AnotherClass [main] Fatal event 
+2018-01-31 10:09:25,019 INFO AnotherClass [main] Info event 
+2018-01-31 10:13:17,789 FATAL AnotherClass [main] Fatal event 
+2018-01-31 10:13:17,790 INFO AnotherClass [main] Info event 
