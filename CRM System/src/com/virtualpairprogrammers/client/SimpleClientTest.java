@@ -5,6 +5,9 @@ import java.util.Collection;
 import java.util.GregorianCalendar;
 import java.util.List;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.virtualpairprogrammers.domain.Action;
@@ -16,9 +19,13 @@ import com.virtualpairprogrammers.services.customers.CustomerNotFoundException;
 import com.virtualpairprogrammers.services.diary.DiaryManagementService;
 
 public class SimpleClientTest {
+	
+	static Logger logger = LogManager.getLogger(SimpleClientTest.class);
 
 	public static void main(String[] args) 
 	{
+		logger.error("Some error occurred");
+		
 		ClassPathXmlApplicationContext container = new ClassPathXmlApplicationContext("application.xml");
 		
 		CustomerManagementService customerService = container.getBean(CustomerManagementService.class);
@@ -26,6 +33,17 @@ public class SimpleClientTest {
 		DiaryManagementService diaryService = container.getBean(DiaryManagementService.class);
 		
 		customerService.newCustomer(new Customer("CS03939", "Acme", "Good Customer"));
+		
+		// An if statement is necessary ONLY when it can avoid running significant amount of code
+		// in this simulated example case it will avoid getting lots of information from a database
+		if (logger.isEnabledFor(Level.DEBUG)) {
+			
+			// get number of records from customer table - The code to get those records will 
+			// impact the code performance
+			
+			// the next line does NOT cause any significant performance issue - no concerns here
+			logger.debug("The number of records was 163");
+		}
 		
 		Call newCall = new Call("Larry Wall called from Acme Corp");
 		Action action1 = new Action("Call back Larry to ask how things are going", new GregorianCalendar(2016, 0, 0), "rac");

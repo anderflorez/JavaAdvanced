@@ -1,0 +1,20 @@
+09:29:20,413 TRACE hsqldb.db.HSQLDB6151AA7C37.ENGINE:? - log close size: 35
+09:29:20,433  INFO hsqldb.db.HSQLDB6151AA7C37.ENGINE:? - Database closed
+09:29:21,039 TRACE hsqldb.db.HSQLDB6151AA7C37.ENGINE:? - log close size: 114
+09:29:21,056  INFO hsqldb.db.HSQLDB6151AA7C37.ENGINE:? - Database closed
+09:35:14,804 TRACE hsqldb.db.HSQLDB6151AA7C37.ENGINE:? - log close size: 35
+09:35:14,832  INFO hsqldb.db.HSQLDB6151AA7C37.ENGINE:? - Database closed
+09:35:15,196 TRACE hsqldb.db.HSQLDB6151AA7C37.ENGINE:? - log close size: 114
+09:35:15,217  INFO hsqldb.db.HSQLDB6151AA7C37.ENGINE:? - Database closed
+09:44:57,575 TRACE hsqldb.db.HSQLDB6151AA7C37.ENGINE:? - log close size: 35
+09:44:57,588  INFO hsqldb.db.HSQLDB6151AA7C37.ENGINE:? - Database closed
+09:44:58,190 TRACE hsqldb.db.HSQLDB6151AA7C37.ENGINE:? - log close size: 114
+09:44:58,224  INFO hsqldb.db.HSQLDB6151AA7C37.ENGINE:? - Database closed
+09:47:06,980 TRACE hsqldb.db.HSQLDB6151AA7C37.ENGINE:? - log close size: 35
+09:47:07,005  INFO hsqldb.db.HSQLDB6151AA7C37.ENGINE:? - Database closed
+09:47:07,568 TRACE hsqldb.db.HSQLDB6151AA7C37.ENGINE:? - log close size: 114
+09:47:07,582  INFO hsqldb.db.HSQLDB6151AA7C37.ENGINE:? - Database closed
+09:59:37,873 TRACE hsqldb.db.HSQLDB6151AA7C37.ENGINE:? - log close size: 35
+09:59:37,887  INFO hsqldb.db.HSQLDB6151AA7C37.ENGINE:? - Database closed
+09:59:38,403 TRACE hsqldb.db.HSQLDB6151AA7C37.ENGINE:? - log close size: 114
+09:59:38,427  INFO hsqldb.db.HSQLDB6151AA7C37.ENGINE:? - Database closed
