@@ -5,9 +5,11 @@ import java.util.Collection;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import org.apache.log4j.Level;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+//import org.apache.log4j.Level;
+//import org.apache.log4j.LogManager;
+//import org.apache.log4j.Logger;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.virtualpairprogrammers.domain.Action;
@@ -20,11 +22,15 @@ import com.virtualpairprogrammers.services.diary.DiaryManagementService;
 
 public class SimpleClientTest {
 	
-	static Logger logger = LogManager.getLogger(SimpleClientTest.class);
+//	log4j version
+//	static Logger logger = LogManager.getLogger(SimpleClientTest.class);
+	
+//	Commons Logging version
+	static Log logger = LogFactory.getLog(SimpleClientTest.class);
 
 	public static void main(String[] args) 
 	{
-		logger.error("Some error occurred");
+		logger.error("Some error occurred");	// this line of code works for both log4j and commons logging
 		
 		ClassPathXmlApplicationContext container = new ClassPathXmlApplicationContext("application.xml");
 		
@@ -36,8 +42,20 @@ public class SimpleClientTest {
 		
 		// An if statement is necessary ONLY when it can avoid running significant amount of code
 		// in this simulated example case it will avoid getting lots of information from a database
-		if (logger.isEnabledFor(Level.DEBUG)) {
+		
+		// Log4j version
+//		if (logger.isEnabledFor(Level.DEBUG)) {
 			
+			// get number of records from customer table - The code to get those records will 
+			// impact the code performance
+			
+			// the next line does NOT cause any significant performance issue - no concerns here
+//			logger.debug("The number of records was 163");
+//		}
+		
+		// Commons version
+		if (logger.isDebugEnabled()) {
+		
 			// get number of records from customer table - The code to get those records will 
 			// impact the code performance
 			

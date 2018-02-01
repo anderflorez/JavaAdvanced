@@ -21,7 +21,6 @@
 	<classpathentry kind="lib" path="lib/jboss-logging-3.1.0.GA.jar"/>
 	<classpathentry kind="lib" path="lib/jboss-transaction-api_1.1_spec-1.0.0.Final.jar"/>
 	<classpathentry kind="lib" path="lib/junit-4.11.jar"/>
-	<classpathentry kind="lib" path="lib/log4j.jar"/>
 	<classpathentry kind="lib" path="lib/slf4j-api-1.6.1.jar"/>
 	<classpathentry kind="lib" path="lib/spring-aop-4.0.2.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/spring-aspects-4.0.2.RELEASE.jar"/>
@@ -44,5 +43,6 @@
 	<classpathentry kind="lib" path="lib/spring-webmvc-4.0.2.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/spring-webmvc-portlet-4.0.2.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/spring-websocket-4.0.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/log4j.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,8 +1,6 @@
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
-
 public class AnotherClass {
 
 	static Logger logger = Logger.getGlobal();
