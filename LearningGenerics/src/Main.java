@@ -6,6 +6,9 @@ import java.util.List;
 public class Main {
 
 	public static void main(String[] args) {
+		
+		
+		
 		List<Customer> customers = new ArrayList<Customer>();
 		
 		Customer customer1 = new Customer(1,"Simon Brown","10 East Street");
