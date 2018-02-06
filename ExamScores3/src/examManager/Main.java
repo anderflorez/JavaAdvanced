@@ -27,6 +27,8 @@ public class Main {
 		ExamManager examManager = new ExamManager();
 		System.out.println ("The average score is " + examManager.customCalculation(average));
 		System.out.println ("The highest score is " + examManager.customCalculation(highestScore));
+		
+		System.out.println("the first score is " + examManager.customCalculation(myScores -> myScores.get(0)));
 	}
 
 }
