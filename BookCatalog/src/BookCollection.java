@@ -1,15 +1,16 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.BiPredicate;
 
 public class BookCollection {
 	
 	private List<Book> books;
 	
-	public List<Book> findBooks(someFunctionalInterface searchCriteria) {
+	public List<Book> findBooks(BiPredicate<Book, String> searchCriteria) {
 		List<Book> results = new ArrayList<Book>();
 		
 		for (Book nextBook : books) {
-			if (searchCriteria.execute(nextBook)) {
+			if (searchCriteria.test(nextBook, "Men")) {
 				results.add(nextBook);
 			}
 		}
