@@ -3,9 +3,11 @@ package examManager;
 import java.util.ArrayList;
 import java.util.List;
 
-import calculators.CalculationFunctionInterface;
-
 public class ExamManager {
+	
+	public interface CalculationFunctionInterface {
+		public Double execute(List<Double> scores);
+	}
 
 	private List<Double> myScores;
 
