@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.function.ToDoubleFunction;
+//import java.util.stream.Stream;
 
 public class ExamManager {
 	
@@ -75,11 +76,22 @@ public class ExamManager {
 	}
 	
 	public void printSelectedScores (Predicate<Double> testCriteria) {
+		
+		// Use the forEach method to iterate through the list which takes 
+		// a consumer (Functional interface for lambda function that takes ONE argument and does not return anything)
 		myScores.forEach(s -> {
 			if (testCriteria.test(s)) {
 				System.out.println(s);
 			}
 		});
+	}
+	
+	public double getTotalOfAllScores() {
+		//Stream<Double> scoreStream = myScores.stream();
+		//return scoreStream.reduce(0d, (a,b) -> a+b);
+		
+		// Or place everything in one line
+		return myScores.stream().reduce(0d,  (a, b) -> a+b);
 	}
 	
 }

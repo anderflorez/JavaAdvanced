@@ -33,6 +33,10 @@ public class Main {
 		examManager.printScores();
 		System.out.println("---");
 		examManager.printSelectedScores(s -> s >= 50);
+		
+		// Using stream to sum all scores
+		System.out.println();
+		System.out.println("The total of all scores is: " + examManager.getTotalOfAllScores());
 	}
 
 }
