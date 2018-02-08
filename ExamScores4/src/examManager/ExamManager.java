@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.function.ToDoubleFunction;
 //import java.util.stream.Stream;
+import java.util.stream.Collectors;
 
 public class ExamManager {
 	
@@ -99,4 +100,23 @@ public class ExamManager {
 		myScores.stream().filter(testCriteria).forEach(s -> System.out.println(s));
 	}
 	
+	// Use the method map to change the values in the stream and then print them out to the console
+	public void doubleAllScores() {
+		myScores.stream().map(d -> d*2).forEach(s -> System.out.println(s));
+	}
+	
+	// Use the method map to change the values in the stream and then use the collect method to 
+	// convert the stream to a new list and return it
+	public List<Double> getDoubleAllScoresList() {
+		return myScores.stream().map(d -> d*2).collect(Collectors.toList());
+	}
+	
 }
+
+
+
+
+
+
+
+

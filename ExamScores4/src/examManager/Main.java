@@ -41,6 +41,15 @@ public class Main {
 		//using the second version of the printSelectedScores
 		System.out.println("\nUsing the new printSelectedScoresVersion2");
 		examManager.printSelectedScoresVersion2(s -> s >= 50);
+		
+		//Print to the console list of scores after they have been manipulated (doubled).
+		System.out.println("\nPrinting the scores after they have been doubled");
+		examManager.doubleAllScores();
+		
+		//Get a list of the scores doubled and print it
+		System.out.println("\nDoubled scores from list created from stream");
+		List<Double> doubleScores = examManager.getDoubleAllScoresList();
+		doubleScores.forEach(s -> System.out.println(s));
 	}
 
 }
