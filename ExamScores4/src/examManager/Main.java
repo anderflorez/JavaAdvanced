@@ -29,6 +29,10 @@ public class Main {
 		System.out.println ("The highest score is " + examManager.customCalculation(highestScore));
 		
 		System.out.println("the first score is " + examManager.customCalculation(myScores -> myScores.get(0)));
+		
+		examManager.printScores();
+		System.out.println("---");
+		examManager.printSelectedScores(s -> s >= 50);
 	}
 
 }
