@@ -94,4 +94,9 @@ public class ExamManager {
 		return myScores.stream().reduce(0d,  (a, b) -> a+b);
 	}
 	
+	//Another version of the printSelectedScores method using the stream filter method
+	public void printSelectedScoresVersion2 (Predicate<Double> testCriteria) {
+		myScores.stream().filter(testCriteria).forEach(s -> System.out.println(s));
+	}
+	
 }

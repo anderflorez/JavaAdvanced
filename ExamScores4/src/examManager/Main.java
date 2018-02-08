@@ -37,6 +37,10 @@ public class Main {
 		// Using stream to sum all scores
 		System.out.println();
 		System.out.println("The total of all scores is: " + examManager.getTotalOfAllScores());
+		
+		//using the second version of the printSelectedScores
+		System.out.println("\nUsing the new printSelectedScoresVersion2");
+		examManager.printSelectedScoresVersion2(s -> s >= 50);
 	}
 
 }
