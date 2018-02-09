@@ -16,7 +16,7 @@ public class Main {
 		
 		//New version of printing the list of books in just one line
 		System.out.println("\nNew version of printing the list of books in just one line");
-		bc.findBooks(book -> book.getTitle().toLowerCase().contains("men")).forEach(s -> System.out.println(s));
+		bc.findBooks(book -> book.getTitle().toLowerCase().contains("men")).forEach(System.out::println);
 		
 		System.out.println("\nPrinting the map of books");
 		Map<Integer, String> foundMapBooks = bc.findMapBooks(book -> book.getTitle().toLowerCase().contains("the"));
