@@ -15,5 +15,9 @@ public class Main {
 		
 		Map<Integer, String> foundMapBooks = bc.findMapBooks(book -> book.getTitle().toLowerCase().contains("the"));
 		foundMapBooks.forEach((k, v) -> System.out.println(v));
+		
+		// Another version with just one line of code
+		System.out.println();
+		bc.findMapBooks(book -> book.getTitle().toLowerCase().contains("the")).forEach((k, v) -> System.out.println(v));
 	}
 }
