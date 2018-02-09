@@ -1,16 +1,16 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.BiPredicate;
+import java.util.function.Predicate;
 
 public class BookCollection {
 	
 	private List<Book> books;
 	
-	public List<Book> findBooks(BiPredicate<Book, String> searchCriteria) {
+	public List<Book> findBooks(Predicate<Book> searchCriteria) {
 		List<Book> results = new ArrayList<Book>();
 		
 		for (Book nextBook : books) {
-			if (searchCriteria.test(nextBook, "Men")) {
+			if (searchCriteria.test(nextBook)) {
 				results.add(nextBook);
 			}
 		}
