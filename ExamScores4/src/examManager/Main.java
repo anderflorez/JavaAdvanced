@@ -50,6 +50,10 @@ public class Main {
 		System.out.println("\nDoubled scores from list created from stream");
 		List<Double> doubleScores = examManager.getDoubleAllScoresList();
 		doubleScores.forEach(s -> System.out.println(s));
+		
+		//Use a regular method as a lambda expression
+		System.out.println("\nUsing a regular method as a lambda expression");
+		examManager.printSelectedScores(examManager::isItLowerThan50);
 	}
 
 }

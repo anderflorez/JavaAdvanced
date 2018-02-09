@@ -111,6 +111,12 @@ public class ExamManager {
 		return myScores.stream().map(d -> d*2).collect(Collectors.toList());
 	}
 	
+	// Regular method to be used as a lambda expression by using the scope specifier operator ::
+	// it will work as a DoublePredicate as it takes one Double parameter and returns a boolean
+	public boolean isItLowerThan50(Double d) {
+		return (d < 50);
+	}
+	
 }
 
 
