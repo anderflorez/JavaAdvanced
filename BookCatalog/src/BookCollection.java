@@ -31,6 +31,11 @@ public class BookCollection {
 		return books.stream().filter(searchCriteria).collect(Collectors.toMap(s -> s.getId(), s -> s.getTitle()));
 	}
 	
+	// Find out amount of books match search criteria
+	public long findNumberOfBooks(Predicate<Book> searchCriteria) {
+		return books.stream().filter(searchCriteria).count();
+	}
+	
 	public BookCollection() {
 		 books = new ArrayList<Book>();
 		 books.add(new Book(1,"Don Quixote","Miguel De Cervantes"));
