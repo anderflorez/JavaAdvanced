@@ -14,6 +14,10 @@ public class Main {
 			System.out.println (nextBook.getTitle() + " by " + nextBook.getAuthor());
 		}
 		
+		//New version of printing the list of books in just one line
+		System.out.println("\nNew version of printing the list of books in just one line");
+		bc.findBooks(book -> book.getTitle().toLowerCase().contains("men")).forEach(s -> System.out.println(s));
+		
 		System.out.println("\nPrinting the map of books");
 		Map<Integer, String> foundMapBooks = bc.findMapBooks(book -> book.getTitle().toLowerCase().contains("the"));
 		foundMapBooks.forEach((k, v) -> System.out.println(v));

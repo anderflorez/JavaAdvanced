@@ -35,7 +35,7 @@ public class BookCollection {
 	public long findNumberOfBooks(Predicate<Book> searchCriteria) {
 		return books.stream().filter(searchCriteria).count();
 	}
-	
+
 	public BookCollection() {
 		 books = new ArrayList<Book>();
 		 books.add(new Book(1,"Don Quixote","Miguel De Cervantes"));
