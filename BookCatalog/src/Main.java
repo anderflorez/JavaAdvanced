@@ -26,5 +26,9 @@ public class Main {
 		System.out.println("\nNumber of books that match the search criteria");
 		System.out.println(bc.findNumberOfBooks(book -> book.getTitle().toLowerCase().contains("the")));
 		
+		// Number of books that match the search criteria
+		System.out.println("\nNumber of books that match the search criteria");
+		System.out.println(bc.findNumberOfBooks(book -> book.getAuthor().toLowerCase().startsWith("d")));
+		
 	}
 }
