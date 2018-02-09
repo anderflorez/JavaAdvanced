@@ -1,12 +1,14 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class BookCollection {
 	
 	private List<Book> books;
 	
-	public List<Book> findBooks(Predicate<Book> searchCriteria) {
+	// Initial version of findBooks
+	public List<Book> originalFindBooks(Predicate<Book> searchCriteria) {
 		List<Book> results = new ArrayList<Book>();
 		
 		for (Book nextBook : books) {
@@ -16,6 +18,11 @@ public class BookCollection {
 		}
 		
 		return results;
+	}
+	
+	// Simplified version of findBooks
+	public List<Book> findBooks(Predicate<Book> searchCriteria) {
+		return books.stream().filter(searchCriteria).collect(Collectors.toList());
 	}
 	
 	public BookCollection() {
