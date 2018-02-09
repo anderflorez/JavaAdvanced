@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -23,6 +24,11 @@ public class BookCollection {
 	// Simplified version of findBooks
 	public List<Book> findBooks(Predicate<Book> searchCriteria) {
 		return books.stream().filter(searchCriteria).collect(Collectors.toList());
+	}
+	
+	// findBooks version returning a map
+	public Map<Integer, String> findMapBooks(Predicate<Book> searchCriteria) {
+		return books.stream().filter(searchCriteria).collect(Collectors.toMap(s -> s.getId(), s -> s.getTitle()));
 	}
 	
 	public BookCollection() {
