@@ -11,14 +11,18 @@ public class CustomerManager {
 	private int nextId = 0;
 
 	public  void addCustomer(Customer customer) {
+		synchronized (this) {
 			customer.setId(nextId);
 			nextId++;
-		customers.add(customer);
+			customers.add(customer);
+		}			
 	}
 
 	public void howManyCustomers() {
 		int size = 0;
-		size = customers.size();
+		synchronized (this) {
+			size = customers.size();
+		}
 		System.out.println("" + new Date() + " : " + size + " customers created");
 	}
 
