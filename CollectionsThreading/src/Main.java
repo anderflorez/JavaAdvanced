@@ -18,6 +18,7 @@ public class Main {
 				e.printStackTrace();
 			}
 			cm.howManyCustomers();
+			cm.displayCustomers();
 			
 		}
 	}
