@@ -1,7 +1,4 @@
 
-import java.util.UUID;
-
-
 public class GenerateCustomerTask implements Runnable {
 
 	private CustomerManager cm;
