@@ -5,10 +5,21 @@ public class Main {
 		System.out.println("Starting");
 		NumbersTask task = new NumbersTask();
 		
-		for (int i = 1; i <= 5; ++i) {
-			Thread numbersThread = new Thread(task);
-			numbersThread.start();	
+		Thread numbersThread1 = new Thread(task);
+		numbersThread1.start();
+		
+		Thread numbersThread2 = new Thread(task);
+		numbersThread2.start();	
+		
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
 		}
+		
+		numbersThread1.interrupt();
+		numbersThread2.interrupt();
+		
 		System.out.println("Finished");
 
 	}
