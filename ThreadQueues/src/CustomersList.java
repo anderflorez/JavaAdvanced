@@ -8,6 +8,13 @@ public class CustomersList {
 
 	public void addToList(Customer customer) {
 		synchronized (this) {
+			while (customers.size() > 100) {
+				try {
+					wait();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
 			customers.add(customer);
 			notifyAll();
 		}
@@ -18,11 +25,12 @@ public class CustomersList {
 			while (customers.size() ==0) {
 				try {
 					wait();
-					Thread.sleep(500);
+					Thread.sleep(5000);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
 			}
+			notifyAll();
 			return customers.remove(0);
 		}
 	}

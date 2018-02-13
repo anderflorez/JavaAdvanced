@@ -16,7 +16,7 @@ public class AddCustomerTask implements Runnable{
 			customersList.addToList(customer);
 			System.out.println(Thread.currentThread().getName() + " added customer " + i);
 			try {
-				Thread.sleep(5000);
+				Thread.sleep(500);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

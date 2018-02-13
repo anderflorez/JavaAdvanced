@@ -13,7 +13,7 @@ public class RemoveCustomerTask implements Runnable{
 				Customer nextCustomer = customersList.getFromList();
 				System.out.println(Thread.currentThread().getName() + " removed customer " + nextCustomer.getId());
 				try {
-					Thread.sleep(500);
+					Thread.sleep(5000);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
