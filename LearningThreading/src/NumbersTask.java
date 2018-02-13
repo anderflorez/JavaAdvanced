@@ -19,7 +19,7 @@ public class NumbersTask implements Runnable {
 	private void longRunningMethod() throws InterruptedException {
 		System.out.println("Starting long method");
 		Double j = 1.01;
-		for (long l = 1; l < 1000000000000000l; l++ ) {
+		for (long l = 1; l < 1000l; l++ ) {
 			j+=1.01;
 			if (Thread.interrupted()) {
 				throw new InterruptedException();
@@ -31,7 +31,7 @@ public class NumbersTask implements Runnable {
 	// Method created for the chapter Thread Process Flow
 	@Override
 	public void run() {
-		for (int i = 1; i <= 1000000000; i++ ) {
+		for (int i = 1; i <= 1000; i++ ) {
 			System.out.println("Task number " + Thread.currentThread().getName() + " is outputing number " + i);
 			try {
 				longRunningMethod();

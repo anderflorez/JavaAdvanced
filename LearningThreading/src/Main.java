@@ -17,8 +17,17 @@ public class Main {
 			e.printStackTrace();
 		}
 		
-		numbersThread1.interrupt();
-		numbersThread2.interrupt();
+//		numbersThread1.interrupt();
+//		numbersThread2.interrupt();
+		
+		try {
+			numbersThread1.join();
+		} catch (InterruptedException e) {
+		}
+		try {
+			numbersThread2.join();
+		} catch (InterruptedException e) {
+		}
 		
 		System.out.println("Finished");
 
