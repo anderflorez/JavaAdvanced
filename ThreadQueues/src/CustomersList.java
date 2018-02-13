@@ -9,6 +9,7 @@ public class CustomersList {
 	public void addToList(Customer customer) {
 		synchronized (this) {
 			customers.add(customer);
+			notifyAll();
 		}
 	}
 
@@ -16,6 +17,7 @@ public class CustomersList {
 		synchronized (this) {
 			while (customers.size() ==0) {
 				try {
+					wait();
 					Thread.sleep(500);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
@@ -25,4 +27,3 @@ public class CustomersList {
 		}
 	}
 }
-
