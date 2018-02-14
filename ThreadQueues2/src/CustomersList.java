@@ -1,37 +1,46 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 
 public class CustomersList {
 
 	private List<Customer> customers = new ArrayList<Customer>();
+	private Lock customersLock = new ReentrantLock();
+	private Condition customersAvailable = customersLock.newCondition();
+	private Condition listHasSpace = customersLock.newCondition();
 
 	public void addToList(Customer customer) {
-		synchronized (this) {
-			while (customers.size() > 100) {
-				try {
-					wait();
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
+		customersLock.lock();
+		while (customers.size() > 100) {
+			try {
+				listHasSpace.await();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
 			}
-			customers.add(customer);
-			notifyAll();
 		}
+		customers.add(customer);
+		customersAvailable.signalAll();
+		customersLock.unlock();
 	}
 
 	public Customer getFromList() {
-		synchronized (this) {
+		customersLock.lock();
+		try {
 			while (customers.size() ==0) {
 				try {
-					wait();
-					Thread.sleep(5000);
+					customersAvailable.await();
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
 			}
-			notifyAll();
+			listHasSpace.signalAll();
 			return customers.remove(0);
+		}
+		finally {
+			customersLock.unlock();
 		}
 	}
 }
