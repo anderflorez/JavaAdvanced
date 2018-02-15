@@ -11,6 +11,7 @@ public class Main {
 			Thread addCustomers = new Thread(new AddCustomerTask(customersList, i*100));
 			addCustomers.start();
 			System.out.println("Started thread to add customers");
+			System.out.println();
 		}
 		
 	}
