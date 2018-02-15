@@ -29,4 +29,11 @@ public class CustomerRecords implements Iterable<Customer> {
 		
 		return records.values().iterator();
 	}
+	
+	public Customer getCustomerByName(String name) {
+		// This next line of code actually provides an escaping reference to the customer object
+		// allowing the client to call any of the customer mutator methods that will change the object attributes 
+		return this.records.get(name);
+		
+	}
 }
