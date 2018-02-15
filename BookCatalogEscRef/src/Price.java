@@ -1,4 +1,5 @@
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,7 +33,7 @@ public class Price {
 	}
 	
 	public Map<String,Double> getRates() {
-		return rates;
+		return Collections.unmodifiableMap(rates);
 	}
 	
 }

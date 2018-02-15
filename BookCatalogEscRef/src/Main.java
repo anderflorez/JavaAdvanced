@@ -1,7 +1,3 @@
-import java.util.List;
-import java.util.Map;
-import java.util.function.Predicate;
-
 
 public class Main {
 
@@ -11,6 +7,5 @@ public class Main {
 		
 		//get price of book called Tom Jones in EUR
 		System.out.println(bc.findBookByName("Tom Jones").getPrice().convert("EUR"));
-		
 	}
 }
