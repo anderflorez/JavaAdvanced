@@ -1,7 +1,9 @@
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
-public class CustomerRecords {
+public class CustomerRecords implements Iterable<Customer> {
 	private Map<String, Customer> records;
 	
 	public CustomerRecords() {
@@ -13,6 +15,18 @@ public class CustomerRecords {
 	}
 		
 	public Map<String, Customer> getCustomers() {
-		return this.records;
+		// By returning an unmodifiableMap or unmodifiableList instead of the actual map
+		// we prevent the reference from escaping
+		return Collections.unmodifiableMap(this.records);
+		
+		// if we had returned the actual map it actually contains a reference to the original map 
+		// which can then be modified from anywhere else in the code
+		// that goes against the java encapsulation principle
+	}
+
+	@Override
+	public Iterator<Customer> iterator() {
+		
+		return records.values().iterator();
 	}
 }
