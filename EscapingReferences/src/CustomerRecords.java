@@ -33,7 +33,12 @@ public class CustomerRecords implements Iterable<Customer> {
 	public Customer getCustomerByName(String name) {
 		// This next line of code actually provides an escaping reference to the customer object
 		// allowing the client to call any of the customer mutator methods that will change the object attributes 
-		return this.records.get(name);
+		//return this.records.get(name);
+		
+		// To fix this problem we want to return an object that doesn't allow the class client to modify the original object
+		// we can achieve this by returning a whole new object which is identical to the requested one
+		// this can be done by providing a copy constructor in the customer class
+		return new Customer(this.records.get(name));
 		
 	}
 }
