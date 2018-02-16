@@ -1,18 +1,30 @@
 
-public class Book {
+public class Book implements BookReadOnly {
 	private int id;
 	private String title;
 	private String author;
 	private Price price;
 	
+	/* (non-Javadoc)
+	 * @see BookReadOnly#getId()
+	 */
+	@Override
 	public int getId() {
 		return id;
 	}
 
+	/* (non-Javadoc)
+	 * @see BookReadOnly#getTitle()
+	 */
+	@Override
 	public String getTitle() {
 		return title;
 	}
 
+	/* (non-Javadoc)
+	 * @see BookReadOnly#getAuthor()
+	 */
+	@Override
 	public String getAuthor() {
 		return author;
 	}
@@ -24,12 +36,20 @@ public class Book {
 		this.price = new Price(price);
 	}
 	
+	/* (non-Javadoc)
+	 * @see BookReadOnly#toString()
+	 */
+	@Override
 	public String toString() {
 		return title + " by " + author;
 	}
 	
+	/* (non-Javadoc)
+	 * @see BookReadOnly#getPrice()
+	 */
+	@Override
 	public Price getPrice() {
-		return this.price;
+		return (new Price(this.price));
 	}
 	
 	public void setPrice(Double price) {

@@ -1,5 +1,4 @@
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,6 +14,14 @@ public class Price {
 		rates.put("GBP", 0.6);
 		rates.put("EUR", 0.8);
 	}
+	
+	public Price(Price originalPrice) {
+		this.value = originalPrice.value;
+		this.rates = new HashMap<String, Double>();
+		this.rates.put("USD", originalPrice.rates.get("USD"));
+		this.rates.put("GBP", originalPrice.rates.get("GBP"));
+		this.rates.put("EUR", originalPrice.rates.get("EUR"));
+	}
 		
 	public Double convert(String toCurrency) {
 		
@@ -23,8 +30,7 @@ public class Price {
 		}
 		else {
 			Double conversion = rates.get("USD") / rates.get(toCurrency);
-			value = conversion * value;
-			return value;
+			return conversion * value;
 		}
 	}
 	
@@ -32,8 +38,8 @@ public class Price {
 		return this.value.toString();
 	}
 	
-	public Map<String,Double> getRates() {
-		return Collections.unmodifiableMap(rates);
+	public Double getRates(String key) {
+		return rates.get(key);
 	}
 	
 }
